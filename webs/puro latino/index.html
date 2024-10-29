@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PURO LATINO FEST</title>
+</head>
+
+<body>
+    <header>
+        <img src="img/banner.png" id="titulo">
+    </header>
+    <nav>
+        <a href="#ubi" class="nav">Ubicación</a>
+        <a href="#cartel" class="nav">Cartelera</a>
+        <a href="#precios" class="nav">Precios</a>
+        <a href="#form" class="nav">!Registrate!</a>
+    </nav>
+    <br>
+    <main>
+        <div id="bienvenida"></div>
+        <br>
+        <br>
+        <section id="ubi">
+            <h1 class="titulos">¡Encuéntranos!</h1>
+            <br>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.842359209823!2d-6.006704424932376!3d37.41720077207762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126b936aa99ef3%3A0xe0a59b52052890c8!2sEstadio%20La%20Cartuja%20Sevilla!5e0!3m2!1ses!2ses!4v1728028594366!5m2!1ses!2ses"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 class="titulos">Cartelera</h1>
+        <br>
+        <section id="cartel">
+            <div class="galeria">
+                <div class="g-item">
+                    <img src="img/mora.png">
+                    <a href="artistas/mora.html" class="pie">Mora</a>
+                </div>
+                <div class="g-item">
+                    <img src="img/myers.png">
+                    <a href="artistas/bryant.html" class="pie">Bryant Myers</a>
+                </div>
+                <div class="g-item">
+                    <img src="img/anuel.png">
+                    <a href="artistas/anuel.html" class="pie">Anuel AA</a>
+                </div>
+            </div>
+            <div class="galeria">
+                <div class="g-item">
+                    <img src="img/jhay.png">
+                    <a href="artistas/jhay.html" class="pie">Jhay Cortez</a>
+                </div>
+                <div class="g-item">
+                    <img src="img/jc.png">
+                    <a href="artistas/jc.html" class="pie">JC Reyes</a>
+                </div>
+                <div class="g-item">
+                    <img src="img/deiv.png">
+                    <a href="artistas/deiv.html" class="pie">Dei V</a>
+                </div>
+            </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 class="titulos">Precios</h1>
+        <br>
+        <section id="precios">
+            <table class="tabla">
+                <tr>
+                    <th colspan="4" class="principal">Precio</th>
+                </tr>
+                <tr>
+                    <th>Abono General</th>
+                    <th>Abono Oro</th>
+                    <th>Abono Platino</th>
+                    <th>Reservado Lateral</th>
+                </tr>
+                <tr>
+                    <td>89,99 €</td>
+                    <td>130,00 €</td>
+                    <td>250,30 €</td>
+                    <td>500.00 € (botellas a elegir)</td>
+                </tr>
+            </table>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 class="titulos">¡Compra tus entradas!</h1>
+        <br>
+        <section id="form">
+            <form onsubmit="enviar(event)" class="formulario">
+                <label for="name" class="t-form">Nombre: </label>
+                <input type="text" name="name" class="introducir" required>
+                <br>
+                <br>
+                <label for="surname" class="t-form">Apellidos: </label>
+                <input type="text" name="surname" class="introducir" required>
+                <br>
+                <br>
+                <label for="edad" class="t-form">Edad: </label>
+                <input type="number" name="surname" class="introducir" required>
+                <br>
+                <br>
+                <br>
+                <label for="entradas" class="t-form">Entradas: </label>
+                <input type="number" name="entradas" class="introducir" required>
+                <br>
+                <br>
+                <br>
+                <label for="email" class="t-form">Correo Electrónico: </label>
+                <input type="email" name="email" class="introducir" required>
+                <br>
+                <br>
+                <label for="telefono" class="t-form">Móvil: </label>
+                <input type="number" name="telefono" class="introducir" required>
+                <br>
+                <br>
+                <div id="bajar">
+                    <label for="text" class="t-form">Aspectos a contar: </label>
+                    <textarea class="introducir" rows="5" cols="30" placeholder="Introduce tus aspectos"></textarea>
+                </div>
+                <br>
+                <br>
+                <div id="pequeño">
+                    <label for="terminos" class="t-form" id="pequeño">Acepta los Términos y Condiciones: </label>
+                    <input type="checkbox" name="terminos" required id="check">
+                </div>
+                <br>
+                <br>
+                <div id="btns">
+                    <input type="reset" value="Reiniciar" class="btn">
+                    <input type="submit" value="Enviar" class="btn" id="enviar">
+                </div>
+            </form>
+        </section>
+    </main>
+    <br>
+    <footer>
+        <p>&copy; Página creada por Jesús Raillo 2ºDAW</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

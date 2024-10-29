@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="jcreyes.css">
+	<title>CV JC Reyes</title>
+</head>
+<body>
+	<h1><font color="green">CV - JC Reyes</font></h1>
+	<br>
+	<div class="jcreyes">
+		<img src="jc.jpg" style="width: 100%">
+		<div class="contenedor">
+			<p class="izquierda">JC Reyes</p>
+			<hr>
+			<h5>Datos personales</h5>
+			<button class="ver" onclick="verDP()">
+				<div id="texto">Mostrar</div>
+			</button>
+			<div id="dp"></div>
+			<br>
+			<hr>
+			<h5>Aptitudes</h5>
+			<button class="ver" onclick="verAP()">
+				<div id="text">Mostrar</div>
+			</button>
+			<div id="ap"></div>
+		</div>
+	</div>
+
+	<div class="centro">
+		<h3 class="titulos">Carrera musical</h3>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="ver" onclick="verCarrera()">
+			<div id="centro1">Mostrar</div>
+		</button>
+		<hr class="corto">
+		<div id="carrera"></div>
+
+		<br>
+
+		<h3 class="titulos">Pasado</h3>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="ver" onclick="verPasado()">
+			<div id="centro2">Mostrar</div>
+		</button>
+		<hr class="corto">
+		<div id="pasado"></div>
+
+		<br>
+
+		<h3 class="titulos">Temazos</h3>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="ver" onclick="verTemazos()">
+			<div id="centro3">Mostrar</div>
+		</button>
+		<hr class="corto">
+		<div id="temazos"></div>
+	</div>
+
+
+
+	<script src="script.js" type="text/javascript"></script>
+</body>
+</html>

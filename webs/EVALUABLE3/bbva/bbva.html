@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Banco BBVA</title>
+</head>
+
+<body>
+    <header>
+        <div id="titulo">
+            <img src="img/logo.png" class="img">
+        </div>
+
+        <div id="volver">
+            <a href="../index.html"><img src="https://img.icons8.com/?size=100&id=9045&format=png&color=000000"
+                    class="imagen" title="volver a inicio"></a>
+        </div>
+    </header>
+    <br>
+    <section class="contenedor">
+        <script>
+            // Declaramos saldo como una variable global
+            var saldo = 1000;
+
+            // Contraseña
+            var passwd = 'ITPfp-1';
+        </script>
+        <div class="recuadros">
+            <button class="btn" onclick="
+                // Imprimimos saldo como mensaje de alerta concatenando
+                alert('Tiene disponible: ' + saldo + ' €');
+            ">VER SALDO</button>
+        </div>
+        <div class="recuadros">
+            <button class="btn" onclick="
+                // Preguntamos cantidad a DEPOSITAR
+                var deposito = prompt('Introduce cantidad a depositar:');
+
+                // Comprobamos que no cancela
+                if (deposito != null) {
+                    // Pedimos la contraseña
+                    var passwd2 = prompt('Introduce tu contraseña');
+
+                    // Comprobamos que no cancela
+                    if (passwd2 != null) {
+                        // Verificamos la contraseña
+                        if (passwd2 === passwd) {
+                            // Convertimos el valor ingresado a número
+                            deposito = parseFloat(deposito);
+
+                            // Si el número es mayor que 0
+                            if (deposito > 0) {
+                                // Sumamos el depósito al saldo
+                                saldo = saldo + deposito;
+                                alert('Saldo depositado correctamente');
+                                console.log('Se han ingresado ' + deposito + '€ a tu saldo.\nTu saldo es de: ' + saldo + '€');
+                            } else {
+                                alert('Debes ingresar al menos 1€');
+                            }
+                        } else {
+                            alert('Contraseña incorrecta.');
+                        }
+                    } else {
+                        alert('Operación cancelada');
+                    }
+                } else {
+                    alert('Operación cancelada');
+                }
+            ">DEPOSITAR</button>
+        </div>
+        <div class="recuadros">
+            <button class="btn" onclick="
+                // Preguntamos cantidad a RESTAR
+                var resta = prompt('Introduce cantidad a restar:');
+
+                // Comprobamos que no cancela
+                if (resta != null) {
+                    // Pedimos la contraseña
+                    var passwd2 = prompt('Introduce tu contraseña');
+
+                    // Comprobamos que no cancela
+                    if (passwd2 != null) {
+                        // Verificamos la contraseña
+                        if (passwd2 === passwd) {
+                            // Convertimos el valor ingresado a número
+                            resta = parseFloat(resta);
+
+                            // Si el número no supera al saldo y es positivo
+                            if (resta > 0 && resta <= saldo) {
+                                // Restamos el depósito al saldo
+                                saldo = saldo - resta;
+                                alert('Saldo restado correctamente');
+                                console.log('Se han restado ' + resta + '€ a tu saldo.\nTu saldo es de: ' + saldo + '€');
+                            } else {
+                                alert('No tienes suficiente saldo como para hacer este cargo');
+                            }
+                        } else {
+                            alert('Contraseña incorrecta.');
+                        }
+                    } else {
+                        alert('Operación cancelada');
+                    }
+                } else {
+                    alert('Operación cancelada');
+                }
+            ">RETIRAR</button>
+        </div>
+        <div class="recuadros">
+            <button class="btn" onclick="
+                //Pedir contraseña actual
+                var passwdA = prompt('Introduce tu contraseña actual');
+                
+                //Verificamos que no cancela
+                if (passwdA != null) {
+                    //Verificamos
+                    if (passwdA == passwd) {
+                        //Pedimos nueva contraseña
+                        passwdN = prompt('Introduce una nueva contraseña (mínimo 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial):')
+
+                        //Verificamos que no cancela
+                        if (passwdN != null) {
+                            //Booleanos que verifican
+                            var mayus = false;
+                            var min = false;
+                            var num = false;
+                            var char = false;
+
+                            //Comprobamos que tenga min 8 caracteres
+                            if (passwdN.length >= 8) {
+                                //Bucle for que mira carácter a carácter para ver si se cumple
+                                for (var i = 0; i < passwdN.length; i++) {
+                                    //inicio de variable caracter, que lee cada caracter de la contraseña
+                                    var caracter = passwdN[i];
+
+                                    //Verificamos si contiene lo que se pide
+                                    if (caracter >= 'A' && caracter <= 'Z') {
+                                        mayus = true;
+                                    }
+
+                                    if (caracter >= 'a' && caracter <= 'z') {
+                                        min = true;
+                                    }
+
+                                    if (caracter >= '0' && caracter <= '9') {
+                                        num = true;
+                                    }
+
+                                    if ('@$!%*?&-/_'.includes(caracter)) {
+                                        char = true;
+                                    }
+                                }
+
+                                //Verificamos requisitos
+                                if (mayus && min && num && char) {
+                                    //Actualizamos contraseña, alertamos y mandamos por consola
+                                    passwd = passwdN;
+                                    alert('Contraseña actualizada')
+                                    console.log('Se a actualizado tu contraseña.\nContraseña: ' + passwd);
+                                } else {
+                                    alert('Tu contraseña no cumple los requisitos mínimos')
+                                }
+                            } else {
+                                alert('Tu contraseña no cumple los requisitos mínimos')
+                            }
+                        }
+                    } else {
+                        alert('Contraseña actual incorrecta');
+                    }
+                } else {
+                    alert('Operación cancelada');
+                }  
+            ">CONTRASEÑA</button>
+        </div>
+    </section>
+</body>
+</html>

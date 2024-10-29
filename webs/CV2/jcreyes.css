@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Libre+Baskerville&family=Martian+Mono:wght@500&family=Mooli&family=Sedgwick+Ave+Display&display=swap');
+
+html {
+	position: relative;
+}
+
+h1 {
+	font-family: 'Sedgwick Ave Display';
+	text-align: center;
+	font-size: 50px;
+}
+
+.jcreyes {
+	float: left;
+	margin-top: 5%;
+	width: 250px;
+  	box-shadow: 0 4px 8px 0 rgba(11, 120, 13, 0.2), 0 6px 20px 0 rgba(11, 120, 13, 0.19);
+  	transition: outline 1s ease 0s;
+  	text-align: center;
+}
+
+.jcreyes:hover {
+	box-shadow: 0 10px 20px 0 rgba(11, 120, 13, 0.2), 0 10px 20px 0 rgba(11,120, 13, 0.19);
+}
+
+.contenedor {
+	background-image: url("i1.jpg");
+	background-position: center;
+	background-size: 140px;
+	padding: 10px;
+	font-family: 'Dela Gothic One';
+	color: #046b08;
+}
+
+.izquierda {
+	margin-left: 30%;
+	text-align: left;
+}
+
+hr {
+	border-top: 8px double #046606;
+}
+
+ul {
+	text-align: left;
+	font-size: 10px;
+	font-family: 'Martian Mono';
+	font-weight: bold;
+	color: green;
+  	text-shadow: 2px 2px 4px #FFFFFF; 
+}
+
+.centro {
+	border-top: 8px double #046606;
+	border-bottom: 8px double #046606;
+
+}
+
+.titulos {
+	margin-left: 300px;
+	font-family: 'Sedgwick Ave Display';
+	font-size: 25px;
+	color: green;
+}
+
+.corto {
+	border-top: 5px double #046606;
+	width: 80%;
+}
+
+p {
+	margin-left: 300px;
+}
+
+ol {
+	margin-left: 250px;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:hover, a:active {
+	font-weight: bold;
+	text-shadow: rgb(9, 105, 22) 2px 2px 2px;
+}
+
+.ver {
+	border: 1px solid #046b08;
+	border-radius: 32px;
+	background-color: #046b08;
+	font-family: 'Sedgwick Ave Display';
+	color: white;
+	font-weight: bold;
+	transition: .3s ease;
+}
+
+.ver:hover {
+	font-size: 15px;
+	box-shadow: 0 10px 20px 0 rgba(11, 120, 13, 0.2), 0 10px 20px 0 rgba(11,120, 13, 0.19);
+}

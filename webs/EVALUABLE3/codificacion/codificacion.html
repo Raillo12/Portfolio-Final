@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cifrado.css">
+    <title>Cifrado Vigenere</title>
+</head>
+
+<body>
+    <header>
+        <div id="titulo">
+            <h1 class="v-t">Cifrado de Vigenere</h1>
+        </div>
+        <div id="volver">
+            <a href="../index.html"><img src="https://img.icons8.com/?size=100&id=9045&format=png&color=000000"
+                    class="imagen" title="volver a inicio"></a>
+        </div>
+    </header>
+
+    <section class="contenedor">
+        <button class="btn" onclick="
+            // Pedimos palabra clave
+            var palabraC = prompt('Introduce tu palabra clave:');
+
+            // Verificamos que no cancela
+            if (palabraC != null) {
+                // Pedimos frase a cifrar
+                var frase = prompt('Introduce tu frase a codificar!');
+
+                // Verificamos que no cancela
+                if (frase != null) {
+                    // Comprobamos su longitud
+                    if (frase.length >= 10) {
+                        var cifrado = ''; // Declarar variable donde se almacena el cifrado
+                        var alfabeto = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // Alfabeto
+
+                        // Bucle que cambia y cifra
+                        for (var i = 0; i < frase.length; i++) {
+                            var letraF = frase[i].toUpperCase(); // Convertir letra de la frase a mayúscula
+                            var letraC = palabraC[i % palabraC.length].toUpperCase(); // Letra de la clave
+
+                            // Solo procesamos letras del alfabeto
+                            if (alfabeto.includes(letraF) && alfabeto.includes(letraC)) {
+                                // Calcular posiciones manualmente en el alfabeto
+                                var posF = alfabeto.indexOf(letraF); // Posición de la letra en el alfabeto
+                                var posC = alfabeto.indexOf(letraC); // Posición de la clave en el alfabeto
+
+                                // Ciframos
+                                var posCifrada = (posF + posC) % 26; // Nueva posición cifrada
+
+                                // Obtención de letra cifrada
+                                var letraCifrada = alfabeto[posCifrada]; // Obtener la letra cifrada
+                                cifrado += letraCifrada; // Concatenar letra cifrada al resultado
+                            } else {
+                                cifrado += letraF; // Si no es una letra (como espacios o símbolos), la dejamos igual
+                            }
+                        }
+
+                        // Mostrar el resultado cifrado
+                        alert('La frase cifrada es: ' + cifrado);
+                    } else {
+                        alert('Debe ser de mínimo 10 caracteres');
+                    }
+                } else {
+                    alert('Operación cancelada');
+                }
+            } else {
+                alert('Operación cancelada.');
+            }
+        ">Cifra!</button>
+    </section>
+</body>
+
+</html>
